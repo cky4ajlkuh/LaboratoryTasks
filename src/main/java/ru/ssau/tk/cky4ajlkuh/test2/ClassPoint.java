@@ -2,10 +2,13 @@ package ru.ssau.tk.cky4ajlkuh.test2;
 
 public class ClassPoint {
 
-    public final double x;
-    public final double y;
-    public final double z;
+    public double x;
+    public double y;
+    public double z;
 
+    public ClassPoint() {
+
+    }
     public ClassPoint(double x, double y, double z) {
         this.x = x;
         this.y = y;
@@ -18,4 +21,5 @@ public class ClassPoint {
         System.out.print(z);
         System.out.println(" ");
     }
+
 }
