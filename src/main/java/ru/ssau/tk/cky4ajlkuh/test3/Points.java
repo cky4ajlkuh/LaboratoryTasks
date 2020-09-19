@@ -23,4 +23,7 @@ public final class Points {
     public static Point enlarge(Point thirdPoint, double permanent){
         return new Point(thirdPoint.getX() * permanent, thirdPoint.getY() * permanent, thirdPoint.getZ() * permanent);
     }
+    public static double length(Point point) {
+        return point.length();
+    }
 }
