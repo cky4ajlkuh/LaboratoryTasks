@@ -20,4 +20,7 @@ public final class Points {
     public static Point divide(Point a, Point b) {
         return new Point(a.getX() / b.getX(), a.getY() / b.getY(), a.getZ() / b.getZ());
     }
+    public static Point enlarge(Point thirdPoint, double permanent){
+        return new Point(thirdPoint.getX() * permanent, thirdPoint.getY() * permanent, thirdPoint.getZ() * permanent);
+    }
 }
