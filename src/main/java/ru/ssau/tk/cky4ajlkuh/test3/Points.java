@@ -26,4 +26,10 @@ public final class Points {
     public static double length(Point point) {
         return point.length();
     }
+    public static Point opposite(Point point){
+        return new Point(point.getX() * (-1), point.getY() * (-1), point.getZ() * (-1));
+    }
+    public static Point inverse(Point point){
+        return new Point( 1 / point.getX(), 1 / point.getY(), 1 / point.getZ());
+    }
 }
