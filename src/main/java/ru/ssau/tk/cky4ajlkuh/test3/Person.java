@@ -4,7 +4,23 @@ public class Person {
     private String firstName;
     private String lastname;
     private int passportId;
+        private Person(){
 
+        }
+        public Person(String firstName, String lastname){
+            this.firstName = firstName;
+            this.lastname = lastname;
+        }
+
+        public Person(int passportId){
+            this.passportId = passportId;
+        }
+
+        public Person(String firstName, String lastname, int passportId) {
+            this.firstName = firstName;
+            this.lastname = lastname;
+            this.passportId = passportId;
+        }
     public String getFirstName() {
         return firstName;
     }
@@ -32,19 +48,7 @@ public class Person {
 
 class Test {
     public static void main(String[] args) {
-        Person person = new Person();
-        String lastname = "Ищанов";
-        String firstname = "Даниил";
-        int passportId = 101112;
-        person.setFirstName(firstname);
-        person.setLastname(lastname);
-        person.setPassportId(passportId);
-        Person secondPerson = new Person();
-        String secondLastname = "Горелых";
-        String secondFirstname = "Гумир";
-        int secondPassportTd = 3615;
-        person.setFirstName(secondFirstname);
-        person.setLastname(secondLastname);
-        person.setPassportId(secondPassportTd);
+        Person firstPerson = new Person("БобурМирза Мирзажон Угли","Азимбоев",777);
+        Person secondPerson = new Person("Елизавета","Долгова",880055535);
     }
 }
