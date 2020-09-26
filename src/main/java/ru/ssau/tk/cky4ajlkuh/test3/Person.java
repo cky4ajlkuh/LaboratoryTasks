@@ -49,6 +49,7 @@ public class Person {
 class Test {
     public static void main(String[] args) {
         Person firstPerson = new Person("БобурМирза Мирзажон Угли","Азимбоев",777);
-        Person secondPerson = new Person("Елизавета","Долгова",880055535);
+        Person secondPerson = new Person("Елизавета","Долгова");
+        Person thirdPerson = new Person(880055535);
     }
 }
