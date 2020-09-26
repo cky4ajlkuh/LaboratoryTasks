@@ -5,12 +5,6 @@ public class Person {
     private String lastname;
     private int passportId;
 
-    public Person(String firstName, String lastname, int passportId) {
-        this.firstName = firstName;
-        this.lastname = lastname;
-        this.passportId = passportId;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -38,7 +32,19 @@ public class Person {
 
 class Test {
     public static void main(String[] args) {
-        Person person = new Person("Горелых", "Даниил", 101112);
-        Person secondPerson = new Person("Ищанов", "Гумир", 3615);
+        Person person = new Person();
+        String lastname = "Ищанов";
+        String firstname = "Даниил";
+        int passportId = 101112;
+        person.setFirstName(firstname);
+        person.setLastname(lastname);
+        person.setPassportId(passportId);
+        Person secondPerson = new Person();
+        String secondLastname = "Горелых";
+        String secondFirstname = "Гумир";
+        int secondPassportTd = 3615;
+        person.setFirstName(secondFirstname);
+        person.setLastname(secondLastname);
+        person.setPassportId(secondPassportTd);
     }
 }
