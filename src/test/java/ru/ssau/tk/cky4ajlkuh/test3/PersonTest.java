@@ -11,6 +11,17 @@ public class PersonTest {
     Person person = new Person();
 
     @Test
+    public void testGender(){
+        firstPerson.setGender(Gender.FEMALE);
+        secondPerson.setGender(Gender.MALE);
+        thirdPerson.setGender(Gender.MALE);
+        assertEquals(firstPerson.getGender(), Gender.FEMALE);
+        assertEquals(secondPerson.getGender(), Gender.MALE);
+        assertEquals(thirdPerson.getGender(), Gender.MALE);
+        assertNull(person.getFirstName());
+    }
+
+    @Test
     public void testFirstName() {
         firstPerson.setFirstName(null);
         secondPerson.setFirstName("Andrey");
