@@ -1,6 +1,8 @@
 package ru.ssau.tk.cky4ajlkuh.test3;
 
-public class NamedPoint extends Point {
+import ru.ssau.tk.cky4ajlkuh.test5.Resettable;
+
+public class NamedPoint extends Point implements Resettable {
 
     private String name;
 
@@ -23,5 +25,10 @@ public class NamedPoint extends Point {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void reset() {
+        this.name = "Absent";
     }
 }
