@@ -14,4 +14,12 @@ public class Mission10Test {
         assertEquals(geometric[2], 125, 0.01);
         assertEquals(geometric[4], 3125, 0.01);
     }
+    @Test
+    public void testDivider(){
+        double[] divider = Mission10.divider(18);
+        assertEquals(divider[0],1);
+        assertEquals(divider[1], 2);
+        assertEquals(divider[2],3);
+        assertEquals(divider[4], 0);
+    }
 }
