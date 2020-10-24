@@ -24,4 +24,12 @@ public class Mission10 {
         }
         return divider;
     }
+
+    static void oppositeArray(double[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = -array[i];
+
+        }
+
+    }
 }
