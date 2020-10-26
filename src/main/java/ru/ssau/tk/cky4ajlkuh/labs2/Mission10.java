@@ -30,6 +30,18 @@ public class Mission10 {
             array[i] = -array[i];
 
         }
+    }
 
+    public static boolean checkAvailability(double number, double[] array) {
+        boolean check = true;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                check = true;
+                break;
+            } else {
+                check = false;
+            }
+        }
+        return check;
     }
 }

@@ -30,5 +30,14 @@ public class Mission10Test {
         Mission10.oppositeArray(array);
         assertEquals(array[0], 1);
         assertEquals(array[5], -10);
+        assertEquals(array[1], -1);
+    }
+
+    @Test
+    public void testCheckAvailability() {
+        double[] array = new double[]{10., 20., 30., 5., 0., 0.1, -3.};
+        assertTrue(Mission10.checkAvailability(10., array));
+        assertFalse(Mission10.checkAvailability(-4., array));
+        assertNotEquals(Mission10.checkAvailability(-100., array), true);
     }
 }
