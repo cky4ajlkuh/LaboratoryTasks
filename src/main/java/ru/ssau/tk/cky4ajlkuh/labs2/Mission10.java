@@ -79,4 +79,14 @@ public class Mission10 {
         }
         return max;
     }
+
+    public static double sumNumber(double[] array) {
+        double sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 0) {
+                sum += array[i];
+            }
+        }
+        return sum;
+    }
 }

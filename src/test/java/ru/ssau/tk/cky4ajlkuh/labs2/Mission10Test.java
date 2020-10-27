@@ -71,4 +71,14 @@ public class Mission10Test {
         assertEquals(Mission10.maxNumber(new int[]{}), null);
         assertEquals(Mission10.maxNumber(array), 57, 0.001);
     }
+
+    @Test
+    public void testSumNumber(){
+        double[] array = new double[20];
+        for (int i = 0; i < 20; i++) {
+            array[i] = i * 2;
+        }
+        assertEquals(Mission10.sumNumber(array), 180, 0.001);
+        assertEquals(Mission10.sumNumber(new double[]{1.,2.,3.,}), 4, 0.001);
+    }
 }
