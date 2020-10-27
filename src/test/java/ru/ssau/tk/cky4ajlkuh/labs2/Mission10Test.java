@@ -48,4 +48,17 @@ public class Mission10Test {
         assertFalse(Mission10.checkNull(secondArray));
         assertTrue(Mission10.checkNull(firstArray));
     }
+
+    @Test
+    public void testEvenNumber() {
+        double[] array = new double[]{10., 20., 30., 40., 50., 1.};
+        double[] arraySecond = new double[10];
+        double[] arrayThird = new double[]{1., 2., 3., 4., 5., 6., 7., 8.};
+        for (int i = 0; i < 10; i++) {
+            arraySecond[i] = i * 3;
+        }
+        assertEquals(Mission10.evenNumber(array), 5, 0.001);
+        assertEquals(Mission10.evenNumber(arraySecond), 5, 0.001);
+        assertEquals(Mission10.evenNumber(arrayThird), 4, 0.001);
+    }
 }

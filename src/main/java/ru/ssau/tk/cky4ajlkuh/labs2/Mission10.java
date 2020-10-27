@@ -54,4 +54,13 @@ public class Mission10 {
         return false;
     }
 
+    public static double evenNumber(double[] array) {
+        double count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
