@@ -44,4 +44,14 @@ public class Mission10 {
         }
         return check;
     }
+
+    public static boolean checkNull(Integer[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

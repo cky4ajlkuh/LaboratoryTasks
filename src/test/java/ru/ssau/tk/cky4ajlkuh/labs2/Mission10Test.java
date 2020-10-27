@@ -40,4 +40,12 @@ public class Mission10Test {
         assertFalse(Mission10.checkAvailability(-4., array));
         assertNotEquals(Mission10.checkAvailability(-100., array), true);
     }
+
+    @Test
+    public void testCheckNull() {
+        Integer[] firstArray = new Integer[]{null, 10, 5, -3, 15};
+        Integer[] secondArray = new Integer[]{4, 3, 2, 1, -64};
+        assertFalse(Mission10.checkNull(secondArray));
+        assertTrue(Mission10.checkNull(firstArray));
+    }
 }
