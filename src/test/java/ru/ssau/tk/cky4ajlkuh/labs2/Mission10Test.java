@@ -61,4 +61,14 @@ public class Mission10Test {
         assertEquals(Mission10.evenNumber(arraySecond), 5, 0.001);
         assertEquals(Mission10.evenNumber(arrayThird), 4, 0.001);
     }
+
+    @Test
+    public void testMaxNumber() {
+        int[] array = new int[20];
+        for (int i = 0; i < 20; i++) {
+            array[i] = i * 3;
+        }
+        assertEquals(Mission10.maxNumber(new int[]{}), null);
+        assertEquals(Mission10.maxNumber(array), 57, 0.001);
+    }
 }

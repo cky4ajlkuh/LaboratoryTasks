@@ -63,4 +63,20 @@ public class Mission10 {
         }
         return count;
     }
+
+    public static Integer maxNumber(int[] array) {
+        if (array.length == 0) {
+            return null;
+        }
+        int max = array[0];
+        for (int i = 0; i != array.length; i++) {
+            max = array[i];
+            for (int j = i; j < array.length; j++) {
+                if (array[j] > array[i]) {
+                    max = array[j];
+                }
+            }
+        }
+        return max;
+    }
 }
