@@ -89,4 +89,22 @@ public class Mission10 {
         }
         return sum;
     }
+
+    public static boolean comparisonOfDivision(double[] array) {
+        double count1 = 0;
+        double count2 = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % array[0] == 0) {
+                count1++;
+            }
+            if (array[i] % array[array.length-1] == 0) {
+                count2++;
+            }
+        }
+        if (count1 > count2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

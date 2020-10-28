@@ -3,6 +3,7 @@ package ru.ssau.tk.cky4ajlkuh.labs2;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
+import static org.testng.Assert.assertTrue;
 
 public class Mission10Test {
 
@@ -73,12 +74,21 @@ public class Mission10Test {
     }
 
     @Test
-    public void testSumNumber(){
+    public void testSumNumber() {
         double[] array = new double[20];
         for (int i = 0; i < 20; i++) {
             array[i] = i * 2;
         }
         assertEquals(Mission10.sumNumber(array), 180, 0.001);
-        assertEquals(Mission10.sumNumber(new double[]{1.,2.,3.,}), 4, 0.001);
+        assertEquals(Mission10.sumNumber(new double[]{1., 2., 3.,}), 4, 0.001);
+    }
+
+    @Test
+    public void comparisonOfDivision() {
+        double[] array1 = new double[]{1., 2., 4., 6., 8., 10., 12., 14., 16};
+        double[] array2 = new double[]{10., 20., 30., 40., 50., 3., 1.};
+        assertTrue(Mission10.comparisonOfDivision(array1));
+        assertFalse(Mission10.comparisonOfDivision(array2));
+
     }
 }
