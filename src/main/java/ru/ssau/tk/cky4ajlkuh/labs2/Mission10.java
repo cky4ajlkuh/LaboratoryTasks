@@ -97,7 +97,7 @@ public class Mission10 {
             if (array[i] % array[0] == 0) {
                 count1++;
             }
-            if (array[i] % array[array.length-1] == 0) {
+            if (array[i] % array[array.length - 1] == 0) {
                 count2++;
             }
         }
@@ -107,4 +107,15 @@ public class Mission10 {
             return false;
         }
     }
+
+    public static double searchElement(double[] array, int number) {
+        double k = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                k = i;
+            }
+        }
+        return k;
+    }
 }
+

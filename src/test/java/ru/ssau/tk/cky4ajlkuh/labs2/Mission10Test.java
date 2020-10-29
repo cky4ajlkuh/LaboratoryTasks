@@ -91,4 +91,10 @@ public class Mission10Test {
         assertFalse(Mission10.comparisonOfDivision(array2));
 
     }
+
+    @Test
+    public void searchElement() {
+        assertEquals(Mission10.searchElement(new double[]{10., 20., 30., 40., 50., 60., 70.,}, 30), 2, 0.001);
+        assertEquals(Mission10.searchElement(new double[]{-5, -10, 14, 23, 654, 345, 667, 86, 8, 41}, 86), 7, 0.001);
+    }
 }
