@@ -97,4 +97,12 @@ public class Mission10Test {
         assertEquals(Mission10.searchElement(new double[]{10., 20., 30., 40., 50., 60., 70.,}, 30), 2, 0.001);
         assertEquals(Mission10.searchElement(new double[]{-5, -10, 14, 23, 654, 345, 667, 86, 8, 41}, 86), 7, 0.001);
     }
+
+    @Test
+    public void replayElements(){
+        int[] array = new int[]{1, 2, 4, 6, 8, 10, 12, 14, 16};
+        Mission10.replayElements(array);
+        assertEquals(array[0], 16);
+        assertEquals(array[8],1);
+    }
 }
