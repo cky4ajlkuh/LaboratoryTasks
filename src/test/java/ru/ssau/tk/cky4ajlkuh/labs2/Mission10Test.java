@@ -84,7 +84,7 @@ public class Mission10Test {
     }
 
     @Test
-    public void comparisonOfDivision() {
+    public void testComparisonOfDivision() {
         double[] array1 = new double[]{1., 2., 4., 6., 8., 10., 12., 14., 16};
         double[] array2 = new double[]{10., 20., 30., 40., 50., 3., 1.};
         assertTrue(Mission10.comparisonOfDivision(array1));
@@ -93,16 +93,29 @@ public class Mission10Test {
     }
 
     @Test
-    public void searchElement() {
+    public void testSearchElement() {
         assertEquals(Mission10.searchElement(new double[]{10., 20., 30., 40., 50., 60., 70.,}, 30), 2, 0.001);
         assertEquals(Mission10.searchElement(new double[]{-5, -10, 14, 23, 654, 345, 667, 86, 8, 41}, 86), 7, 0.001);
     }
 
     @Test
-    public void replayElements(){
+    public void testReplayElements() {
         int[] array = new int[]{1, 2, 4, 6, 8, 10, 12, 14, 16};
         Mission10.replayElements(array);
         assertEquals(array[0], 16);
-        assertEquals(array[8],1);
+        assertEquals(array[8], 1);
+    }
+
+    @Test
+    public void testBitwiseNegation() {
+        int[] array = new int[]{1, 2, 4, 6, 8, 10, 12, 14, 16};
+        Mission10.bitwiseNegation(array);
+        assertEquals(array[0], -2, 0.01);
+        assertEquals(array[1], -3, 0.01);
+        assertEquals(array[2], -5, 0.01);
+        Mission10.bitwiseNegation(array);
+        assertEquals(array[0], 1, 0.001);
+        assertEquals(array[1], 2, 0.001);
+        assertEquals(array[2], 4, 0.001);
     }
 }

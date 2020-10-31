@@ -118,14 +118,14 @@ public class Mission10 {
         return k;
     }
 
-     static void replayElements(int[] array) {
+    static void replayElements(int[] array) {
         int max = array[0];
         int min = array[0];
         for (int i = 0; i < array.length; i++) {
-            if(array[i] > max){
+            if (array[i] > max) {
                 max = array[i];
             }
-            if(array[i]< min) {
+            if (array[i] < min) {
                 min = array[i];
             }
         }
@@ -143,6 +143,13 @@ public class Mission10 {
         array[indexMax] = min;
         array[indexMin] = max;
     }
+
+    static void bitwiseNegation(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ~array[i];
+        }
+    }
+
 }
 
 
