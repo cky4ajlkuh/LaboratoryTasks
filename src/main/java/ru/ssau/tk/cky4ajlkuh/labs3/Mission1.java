@@ -6,4 +6,11 @@ public class Mission1 {
             System.out.println(str.charAt(i));
         }
     }
+    static void byteString(String string){
+        byte[] array = string.getBytes();
+        for (int i : array){
+            System.out.println(i);
+
+        }
+    }
 }

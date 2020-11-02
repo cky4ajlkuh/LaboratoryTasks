@@ -11,4 +11,12 @@ public class Mission1Test {
         String string = "Воздушно-Космические Войска";
         Mission1.outStr(string);
     }
+
+    @Test
+    public void testByteString(){
+        String firstString = "Hello";
+        String secondString = "Мир";
+        Mission1.byteString(firstString);
+        Mission1.byteString(secondString);
+    }
 }
