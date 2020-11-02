@@ -150,6 +150,18 @@ public class Mission10 {
         }
     }
 
+    static boolean[] trueArray(int[] array) {
+        boolean[] secondArray = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                secondArray[i] = true;
+            }
+            if (array[i] % 2 != 0) {
+                secondArray[i] = false;
+            }
+        }
+        return secondArray;
+    }
 }
 
 

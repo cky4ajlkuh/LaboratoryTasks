@@ -118,4 +118,13 @@ public class Mission10Test {
         assertEquals(array[1], 2, 0.001);
         assertEquals(array[2], 4, 0.001);
     }
+
+    @Test
+    public void testTrueArray() {
+        int[] array = new int[]{1, 2, 4, 6, 8, 10, 12, 14, 16, 17, 18, 19, 21};
+        boolean[] array2 = Mission10.trueArray(array);
+        assertFalse(array2[0]);
+        assertTrue(array2[2]);
+        assertFalse(array2[12]);
+    }
 }
