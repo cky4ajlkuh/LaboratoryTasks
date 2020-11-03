@@ -19,4 +19,11 @@ public class Mission1Test {
         Mission1.byteString(firstString);
         Mission1.byteString(secondString);
     }
+
+    @Test
+    public void testComparisonString(){
+        Mission1.comparisonString();
+// в первом случае получается false, т.к. "==" сравнивает ссылки данных объектов
+// во втором случает получается true, т.к. метод сравнивает значения данных объектов
+    }
 }

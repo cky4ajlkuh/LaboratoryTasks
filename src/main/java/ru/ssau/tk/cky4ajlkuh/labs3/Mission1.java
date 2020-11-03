@@ -13,4 +13,15 @@ public class Mission1 {
 
         }
     }
+
+    static void comparisonString(){
+        String str1 = "Hello";
+        String str2 = new String(str1);
+        boolean comparison = false;
+        if (str1==str2){
+            comparison = true;
+        }
+        System.out.println(comparison);
+        System.out.println(str1.equals(str2));
+    }
 }
