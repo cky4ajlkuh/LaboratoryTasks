@@ -162,6 +162,20 @@ public class Mission10 {
         }
         return secondArray;
     }
+
+    static double multiplyArray(double[] array) {
+        double multiply = 1;
+        for (double i : array) {
+            if (i != 0) {
+                if (!Double.isInfinite(i)) {
+                    if (!Double.isNaN(i)) {
+                        multiply *= i;
+                    }
+                }
+            }
+        }
+        return multiply;
+    }
 }
 
 

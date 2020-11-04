@@ -127,4 +127,14 @@ public class Mission10Test {
         assertTrue(array2[2]);
         assertFalse(array2[12]);
     }
+
+    @Test
+    public void testMultiplyArray() {
+        double[] array = new double[]{0., 1., 2., 3., 0. / 0., 5.};
+        double[] array2 = new double[]{0., 1., 2., 3., Double.POSITIVE_INFINITY, 5.};
+        double[] array3 = new double[]{0., 1., 2., 3., 4., 5.};
+        assertEquals(Mission10.multiplyArray(array), 30, 0.01);
+        assertEquals(Mission10.multiplyArray(array2), 30, 0.01);
+        assertEquals(Mission10.multiplyArray(array3), 120, 0.01);
+    }
 }
