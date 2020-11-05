@@ -13,7 +13,7 @@ public class Mission1Test {
     }
 
     @Test
-    public void testByteString(){
+    public void testByteString() {
         String firstString = "Hello";
         String secondString = "Мир";
         Mission1.byteString(firstString);
@@ -21,9 +21,19 @@ public class Mission1Test {
     }
 
     @Test
-    public void testComparisonString(){
+    public void testComparisonString() {
         Mission1.comparisonString();
 // в первом случае получается false, т.к. "==" сравнивает ссылки данных объектов
 // во втором случает получается true, т.к. метод сравнивает значения данных объектов
+    }
+
+    @Test
+    public void testPalindromeString() {
+        String str = "мадам";
+        String string = "казак";
+        String str2 = "Дед";
+        assertTrue(Mission1.palindromeString(str));
+        assertTrue(Mission1.palindromeString(string));
+        assertFalse(Mission1.palindromeString(str2));
     }
 }
