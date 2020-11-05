@@ -1,5 +1,7 @@
 package ru.ssau.tk.cky4ajlkuh.labs3;
 
+import java.util.Objects;
+
 public class Mission1 {
     static void outStr(String str) {
         for (int i = 0; i < str.length(); i++) {
@@ -36,5 +38,15 @@ public class Mission1 {
             }
         }
         return palindrome;
+    }
+
+    static boolean comparisonIgnoredCaseString(String str1, String str2) {
+        boolean comparison = false;
+        if (!Objects.equals(null, str1) && !Objects.equals(null, str2)) {
+            if (!str1.equals(str2) && str1.equalsIgnoreCase(str2)) {
+                comparison = true;
+            }
+        }
+        return comparison;
     }
 }

@@ -36,4 +36,15 @@ public class Mission1Test {
         assertTrue(Mission1.palindromeString(string));
         assertFalse(Mission1.palindromeString(str2));
     }
+
+    @Test
+    public void testComparisonIgnoredCaseString() {
+        String str = "Hello";
+        String str2 = "hello";
+        String str3 = "world";
+        String str4 = "!";
+        assertFalse(Mission1.comparisonIgnoredCaseString(str3, str4));
+        assertTrue(Mission1.comparisonIgnoredCaseString(str, str2));
+        assertTrue(Mission1.comparisonIgnoredCaseString("Никита Казаков", "никита казаков"));
+    }
 }
