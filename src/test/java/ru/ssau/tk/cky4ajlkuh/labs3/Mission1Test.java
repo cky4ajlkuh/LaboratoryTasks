@@ -47,4 +47,11 @@ public class Mission1Test {
         assertTrue(Mission1.comparisonIgnoredCaseString(str, str2));
         assertTrue(Mission1.comparisonIgnoredCaseString("Никита Казаков", "никита казаков"));
     }
+
+    @Test
+    public void testCheckEntry(){
+        assertEquals(Mission1.checkEntry("Дома", "Доктор"), -1);
+        assertEquals(Mission1.checkEntry("Три топора", "пора"), 6);
+        assertEquals(Mission1.checkEntry("Давай", "ай"), 3);
+    }
 }

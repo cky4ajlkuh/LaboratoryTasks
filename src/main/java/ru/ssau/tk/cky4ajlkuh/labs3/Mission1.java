@@ -49,4 +49,8 @@ public class Mission1 {
         }
         return comparison;
     }
+
+    static double checkEntry(String string1, String string2) {
+        return string1.indexOf(string2, string1.length() / 2);
+    }
 }
