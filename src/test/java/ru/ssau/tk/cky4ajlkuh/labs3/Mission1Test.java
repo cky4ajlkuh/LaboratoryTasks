@@ -49,9 +49,20 @@ public class Mission1Test {
     }
 
     @Test
-    public void testCheckEntry(){
+    public void testCheckEntry() {
         assertEquals(Mission1.checkEntry("Дома", "Доктор"), -1);
         assertEquals(Mission1.checkEntry("Три топора", "пора"), 6);
         assertEquals(Mission1.checkEntry("Давай", "ай"), 3);
+    }
+
+    @Test
+    public void testNewArrayString() {
+        String[] array1 = new String[]{"Казаков", "Никита", "Николаевич", "16", "09", "2001"};
+        String[] array2 = new String[]{"Голод", "Горный", "Город", "Жигулевск"};
+        String[] array3 = new String[]{"Владимир", "Владимир", "Владимир"};
+
+        assertEquals(Mission1.newArrayString(array3, "Вл", "мир"), 3);
+        assertEquals(Mission1.newArrayString(array2, "Г", "од"), 2);
+        assertEquals(Mission1.newArrayString(array1, "Ник", "6"), 0);
     }
 }

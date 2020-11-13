@@ -53,4 +53,14 @@ public class Mission1 {
     static double checkEntry(String string1, String string2) {
         return string1.indexOf(string2, string1.length() / 2);
     }
+
+    static double newArrayString(String[] Array, String prefix, String postfix) {
+        double count = 0;
+        for (String string : Array) {
+            if (string.startsWith(prefix) && string.endsWith(postfix)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
