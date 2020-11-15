@@ -10,7 +10,7 @@ public class Person {
 
     }
 
-    public Person(String firstName, String lastname, int passportId,Gender gender){
+    public Person(String firstName, String lastname, int passportId, Gender gender) {
         this.firstName = firstName;
         this.lastname = lastname;
         this.passportId = passportId;
@@ -62,5 +62,9 @@ public class Person {
 
     public Gender getGender() {
         return gender;
+    }
+
+    public String toString() {
+        return firstName + " " + lastname;
     }
 }

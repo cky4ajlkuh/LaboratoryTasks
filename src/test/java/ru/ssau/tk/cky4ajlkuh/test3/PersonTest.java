@@ -11,6 +11,16 @@ public class PersonTest {
     Person person = new Person();
 
     @Test
+    public void testToString(){
+        Person person = new Person("Михаил","Константинов", 6206);
+        assertEquals(person.toString(), "Михаил Константинов");
+        Person person1 = new Person("Михаил","Фирсов",6206);
+        Person person2 = new Person("Владимир","Путин",777);
+        assertEquals(person1.toString(), "Михаил Фирсов");
+        assertEquals(person2.toString(), "Владимир Путин");
+    }
+
+    @Test
     public void testGender(){
         firstPerson.setGender(Gender.FEMALE);
         secondPerson.setGender(Gender.MALE);

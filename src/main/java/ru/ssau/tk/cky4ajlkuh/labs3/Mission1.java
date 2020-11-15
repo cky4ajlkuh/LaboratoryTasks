@@ -54,13 +54,14 @@ public class Mission1 {
         return string1.indexOf(string2, string1.length() / 2);
     }
 
-    static double newArrayString(String[] Array, String prefix, String postfix) {
+    static double newArrayString(String[] array, String prefix, String postfix) {
         double count = 0;
-        for (String string : Array) {
+        for (String string : array) {
             if (string.startsWith(prefix) && string.endsWith(postfix)) {
                 count++;
             }
         }
         return count;
     }
+
 }
