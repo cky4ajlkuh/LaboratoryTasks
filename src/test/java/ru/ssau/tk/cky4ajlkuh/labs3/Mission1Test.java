@@ -65,4 +65,14 @@ public class Mission1Test {
         assertEquals(Mission1.newArrayString(array2, "Г", "од"), 2);
         assertEquals(Mission1.newArrayString(array1, "Ник", "6"), 0);
     }
+
+    @Test
+    public void testUnification() {
+        String[] array = new String[]{"каждый охотник", "желает знать", "где"};
+        String[] array2 = new String[]{"каждый охотник", "желает знать", "где?"};
+        String[] array1 = new String[]{"жил да был", "помним любим скорбим"};
+        assertEquals(Mission1.unification(array), "каждый охотник, желает знать, где");
+        assertEquals(Mission1.unification(array2),"каждый охотник, желает знать, где?");
+        assertEquals(Mission1.unification(array1), "жил да был, помним любим скорбим");
+    }
 }

@@ -63,5 +63,7 @@ public class Mission1 {
         }
         return count;
     }
-
+    static String unification(String[] array){
+        return String.join(", ", array);
+    }
 }
