@@ -137,4 +137,5 @@ public class Mission10Test {
         assertEquals(Mission10.multiplyArray(array2), 30, 0.01);
         assertEquals(Mission10.multiplyArray(array3), 120, 0.01);
     }
+
 }

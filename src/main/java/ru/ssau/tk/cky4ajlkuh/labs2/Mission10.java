@@ -176,6 +176,23 @@ public class Mission10 {
         }
         return multiply;
     }
+
+    static void outStringArray(String[] array) {
+        for (String str : array) {
+            System.out.println(str);
+        }
+    }
 }
 
+class outArray {
+    public static void main(String[] args) {
+        String[] array = new String[]{"Hello", "world", "hello", "World"};
+        String[] array1 = new String[]{"Сижу", "дома", "болею"};
+        String[] array2 = new String[]{"Миша", "Коля", "Никита", "Даниил"};
 
+        Mission10.outStringArray(array);
+        Mission10.outStringArray(array1);
+        Mission10.outStringArray(array2);
+
+    }
+}
