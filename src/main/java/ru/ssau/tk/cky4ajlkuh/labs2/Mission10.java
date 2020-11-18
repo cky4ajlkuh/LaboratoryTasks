@@ -1,5 +1,10 @@
 package ru.ssau.tk.cky4ajlkuh.labs2;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Mission10 {
     public static double[] geometric(int size, int first, int denominator) {
         double[] geometric = new double[size];
@@ -182,6 +187,7 @@ public class Mission10 {
             System.out.println(str);
         }
     }
+
 }
 
 class outArray {
@@ -193,6 +199,11 @@ class outArray {
         Mission10.outStringArray(array);
         Mission10.outStringArray(array1);
         Mission10.outStringArray(array2);
+    }
+}
 
+class outCod {
+    public static void main(String[] args) {
+        System.out.println(java.nio.charset.Charset.defaultCharset());
     }
 }
