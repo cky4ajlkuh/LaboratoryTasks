@@ -25,5 +25,22 @@ public class PracticeTest {
         Assert.assertThrows(NullPointerException.class, () -> {
             Practice.getNamePerson(person3);
         });
+
     }
+
+    @Test
+    public void testGetArrayChars() {
+        String[] strings = new String[]{"bird", "Mood", "Versions", "Premier"};
+
+        String[] strings2 = new String[]{null, "Mood", "Versions", "Pro"};
+
+        String[] strings3 = new String[]{"Big", "Theory", "Bang", "Pepe"};
+
+        assertEquals(Practice.getArrayChars(strings, 2), new String[]{"r", "o", "r", "e"});
+        Assert.assertThrows(NullPointerException.class, () ->
+                Practice.getArrayChars(strings2, 2));
+        Assert.assertThrows(StringIndexOutOfBoundsException.class, () ->
+                Practice.getArrayChars(strings3, 4));
+    }
+
 }
