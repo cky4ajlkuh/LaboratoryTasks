@@ -41,6 +41,19 @@ public class PracticeTest {
                 Practice.getArrayChars(strings2, 2));
         Assert.assertThrows(StringIndexOutOfBoundsException.class, () ->
                 Practice.getArrayChars(strings3, 4));
+
+    }
+
+    @Test
+    public void testDivisionStr(){
+        assertEquals(Practice.divisionStr("2","1"), 2, 0.001);
+        assertEquals(Practice.divisionStr("6","2"), 3, 0.001);
+        Assert.assertThrows(NumberFormatException.class, () -> Practice.divisionStr("K", "2"));
+        Assert.assertThrows(NullPointerException.class, () -> Practice.divisionStr(null, "2"));
+        Assert.assertThrows(ArithmeticException.class, () -> Practice.divisionStr("1", "0"));
+        Assert.assertThrows(NumberFormatException.class, () -> Practice.divisionStr("2", "l"));
+        Assert.assertThrows(NumberFormatException.class, () -> Practice.divisionStr("2", "l"));
+
     }
 
 }
