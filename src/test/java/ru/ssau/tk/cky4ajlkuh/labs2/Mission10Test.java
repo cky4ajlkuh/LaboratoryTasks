@@ -1,11 +1,26 @@
 package ru.ssau.tk.cky4ajlkuh.labs2;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.ssau.tk.cky4ajlkuh.labs4.Practice;
+
+import java.util.Arrays;
 
 import static org.testng.Assert.*;
 import static org.testng.Assert.assertTrue;
 
 public class Mission10Test {
+
+    @Test
+    public void testCheckNullAndSort() {
+        Object[] array = new Object[]{10., 30., 20., 40., 60., 50., 70.};
+        Object[] arrayIsSorted = new Object[]{10., 20., 30., 40., 50., 60., 70.};
+        Mission10.checkNullAndSort(array);
+        boolean b = Arrays.equals(array, arrayIsSorted);
+        assertTrue(b);
+        Object[] array1 = new Object[]{1., 2., 4., 6., null, 10., 12., 14., 16};
+        Assert.assertThrows(NullPointerException.class, () -> Mission10.checkNullAndSort(array1));
+    }
 
     @Test
     public void testGeometric() {
@@ -94,7 +109,7 @@ public class Mission10Test {
 
     @Test
     public void testSearchElement() {
-        assertEquals(Mission10.searchElement(new double[]{10., 20., 30., 40., 50., 60., 70.,}, 30), 2, 0.001);
+        assertEquals(Mission10.searchElement(new double[]{10., 20., 30., 40., 50., 60., 70.}, 30), 2, 0.001);
         assertEquals(Mission10.searchElement(new double[]{-5, -10, 14, 23, 654, 345, 667, 86, 8, 41}, 86), 7, 0.001);
     }
 

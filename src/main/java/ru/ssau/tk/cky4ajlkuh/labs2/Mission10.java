@@ -1,11 +1,22 @@
 package ru.ssau.tk.cky4ajlkuh.labs2;
 
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.Arrays;
+
+import static java.util.Objects.isNull;
 
 public class Mission10 {
+
+    public static void checkNullAndSort(Object[] array){
+        for(int i=0; i != array.length; i++){
+            if(isNull(array[i])){
+                throw new NullPointerException();
+            }
+        }
+        Arrays.sort(array);
+    }
+
+
     public static double[] geometric(int size, int first, int denominator) {
         double[] geometric = new double[size];
         geometric[0] = first;
