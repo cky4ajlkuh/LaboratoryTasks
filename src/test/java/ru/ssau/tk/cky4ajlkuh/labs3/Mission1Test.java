@@ -75,4 +75,11 @@ public class Mission1Test {
         assertEquals(Mission1.unification(array2),"каждый охотник, желает знать, где?");
         assertEquals(Mission1.unification(array1), "жил да был, помним любим скорбим");
     }
+
+    @Test
+    public void testEntryStr(){
+        assertEquals(Mission1.entryStr("abcabcabc", "ca"), 2);
+        assertEquals(Mission1.entryStr("operations", "on"), 7);
+        assertEquals(Mission1.entryStr("back to the future", "e f"), 10);
+    }
 }

@@ -4,6 +4,10 @@ import java.util.Objects;
 
 public class Mission1 {
 
+    static double entryStr(String string, String string2){
+        return string.indexOf(string2);
+    }
+
     static void outStr(String str) {
         for (int i = 0; i < str.length(); i++) {
             System.out.println(str.charAt(i));
