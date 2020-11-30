@@ -1,8 +1,14 @@
 package ru.ssau.tk.cky4ajlkuh.labs3;
 
+import java.nio.charset.Charset;
 import java.util.Objects;
+import java.nio.charset.StandardCharsets.*;
 
 public class Mission1 {
+
+    static String returnByteStr(String str, Charset obj1, Charset obj2){
+        return new String(str.getBytes(obj1), obj2);
+    }
 
     static double entryStr(String string, String string2){
         return string.indexOf(string2);
@@ -71,5 +77,13 @@ public class Mission1 {
     }
     static String unification(String[] array){
         return String.join(", ", array);
+    }
+}
+
+class test{
+    public static void main(String[] args){
+        Charset charset = Charset.defaultCharset();
+        Charset charset2 = Charset.defaultCharset();
+        System.out.println(Mission1.returnByteStr("Miha", charset, charset2));
     }
 }
