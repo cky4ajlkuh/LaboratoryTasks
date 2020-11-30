@@ -1,6 +1,8 @@
 package ru.ssau.tk.cky4ajlkuh.test3;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     Gender gender;
     private String firstName;
     private String lastname;

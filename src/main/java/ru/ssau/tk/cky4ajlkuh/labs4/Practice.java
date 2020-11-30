@@ -2,6 +2,10 @@ package ru.ssau.tk.cky4ajlkuh.labs4;
 
 import ru.ssau.tk.cky4ajlkuh.test3.Person;
 
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+
 public class Practice {
     public static String getNamePerson(Person person) {
         if (person.getFirstName() == null || person.getLastname() == null) {
@@ -36,5 +40,9 @@ public class Practice {
             throw new NumberFormatException();
         }
         return Integer.parseInt(str1) / Integer.parseInt(str2);
+    }
+
+    public static void serializationPerson(OutputStream outputStream, Object obj) throws IOException {
+        ((ObjectOutputStream) outputStream).writeObject(obj);
     }
 }

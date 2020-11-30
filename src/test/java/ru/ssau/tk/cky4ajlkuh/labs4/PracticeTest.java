@@ -4,9 +4,19 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.ssau.tk.cky4ajlkuh.test3.Person;
 
+import java.io.*;
+
 import static org.testng.Assert.*;
 
 public class PracticeTest {
+
+    @Test
+    public void testSerializationPerson() {
+        Person person = new Person("Anton", "Frolov");
+        String str = "";
+        Assert.assertThrows(FileNotFoundException.class, () -> Practice.serializationPerson(new ObjectOutputStream(new FileOutputStream(str)), person));
+        Assert.assertThrows(ClassCastException.class, () -> Practice.serializationPerson(new ByteArrayOutputStream(), person));
+    }
 
     @Test
     public void testGetNamePerson() {
@@ -45,9 +55,9 @@ public class PracticeTest {
     }
 
     @Test
-    public void testDivisionStr(){
-        assertEquals(Practice.divisionStr("2","1"), 2, 0.001);
-        assertEquals(Practice.divisionStr("6","2"), 3, 0.001);
+    public void testDivisionStr() {
+        assertEquals(Practice.divisionStr("2", "1"), 2, 0.001);
+        assertEquals(Practice.divisionStr("6", "2"), 3, 0.001);
         Assert.assertThrows(NumberFormatException.class, () -> Practice.divisionStr("K", "2"));
         Assert.assertThrows(NullPointerException.class, () -> Practice.divisionStr(null, "2"));
         Assert.assertThrows(ArithmeticException.class, () -> Practice.divisionStr("1", "0"));
