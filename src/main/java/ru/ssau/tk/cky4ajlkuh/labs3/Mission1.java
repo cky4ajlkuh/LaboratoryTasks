@@ -2,15 +2,25 @@ package ru.ssau.tk.cky4ajlkuh.labs3;
 
 import java.nio.charset.Charset;
 import java.util.Objects;
-import java.nio.charset.StandardCharsets.*;
 
 public class Mission1 {
 
-    static String returnByteStr(String str, Charset obj1, Charset obj2){
+    static String returnReversStr(String str) {
+        StringBuilder stringBuilder = new StringBuilder(str);
+        for (int i = 0; i < stringBuilder.length(); i++) {
+            if (i % 2 == 0) {
+                stringBuilder.replace(i, i + 1, i + "");
+            }
+        }
+        stringBuilder.reverse();
+        return stringBuilder.toString();
+    }
+
+    static String returnByteStr(String str, Charset obj1, Charset obj2) {
         return new String(str.getBytes(obj1), obj2);
     }
 
-    static double entryStr(String string, String string2){
+    static double entryStr(String string, String string2) {
         return string.indexOf(string2);
     }
 
@@ -30,7 +40,7 @@ public class Mission1 {
 
     static void comparisonString() {
         String str1 = "Hello";
-        String str2 = new String (str1);
+        String str2 = new String(str1);
         boolean comparison = false;
         if (str1.equals(str2)) {
             comparison = true;
@@ -75,13 +85,14 @@ public class Mission1 {
         }
         return count;
     }
-    static String unification(String[] array){
+
+    static String unification(String[] array) {
         return String.join(", ", array);
     }
 }
 
-class test{
-    public static void main(String[] args){
+class test {
+    public static void main(String[] args) {
         Charset charset = Charset.defaultCharset();
         Charset charset2 = Charset.defaultCharset();
         System.out.println(Mission1.returnByteStr("Miha", charset, charset2));

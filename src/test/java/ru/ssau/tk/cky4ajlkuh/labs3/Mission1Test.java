@@ -72,14 +72,23 @@ public class Mission1Test {
         String[] array2 = new String[]{"каждый охотник", "желает знать", "где?"};
         String[] array1 = new String[]{"жил да был", "помним любим скорбим"};
         assertEquals(Mission1.unification(array), "каждый охотник, желает знать, где");
-        assertEquals(Mission1.unification(array2),"каждый охотник, желает знать, где?");
+        assertEquals(Mission1.unification(array2), "каждый охотник, желает знать, где?");
         assertEquals(Mission1.unification(array1), "жил да был, помним любим скорбим");
     }
 
     @Test
-    public void testEntryStr(){
+    public void testEntryStr() {
         assertEquals(Mission1.entryStr("abcabcabc", "ca"), 2);
         assertEquals(Mission1.entryStr("operations", "on"), 7);
         assertEquals(Mission1.entryStr("back to the future", "e f"), 10);
     }
+
+    @Test
+    public void testReturnReversStr() {
+        assertEquals(Mission1.returnReversStr("Hello"), "4l2e0");
+        assertEquals(Mission1.returnReversStr("World"), "4l2o0");
+        assertEquals(Mission1.returnReversStr("Mather"), "r4h2a0");
+
+    }
+
 }
