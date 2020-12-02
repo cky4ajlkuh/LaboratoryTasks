@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class TestingPanel extends JFrame {
-    private final static JButton jButton = new JButton("Press F");
+    private JButton jButton = new JButton("Press F");
 
     public TestingPanel() {
         super("Getting respect");
@@ -14,32 +14,16 @@ public class TestingPanel extends JFrame {
         Container container = this.getContentPane();
         container.setLayout(new GridLayout(5, 5, 5, 5));
         jButton.addActionListener(new JButtonListener());
-        jButton.addKeyListener(new KeyListener());
         container.add(jButton);
     }
 
-    static class KeyListener extends KeyAdapter {
-        @Override
-        public void keyPressed(KeyEvent e) {
-            super.keyPressed(e);
-            int key = e.getKeyCode();
-            if (key == KeyEvent.VK_F) {
-                TestingPanel.outMessage();
-            }
-        }
-    }
-
-    public static void outMessage() {
-        String sms;
-        sms = "take your respect :)";
-        JOptionPane.showMessageDialog(null, sms);
-
-    }
-
     static class JButtonListener implements ActionListener {
+
         @Override
         public void actionPerformed(ActionEvent e) {
-            TestingPanel.outMessage();
+            String sms;
+            sms = "take your respect :)";
+            JOptionPane.showMessageDialog(null, sms);
         }
     }
 }
