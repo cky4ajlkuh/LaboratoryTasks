@@ -12,6 +12,13 @@ import static org.testng.Assert.assertTrue;
 public class Mission10Test {
 
     @Test
+    public void testGetArray() {
+        assertEquals(Mission10.getArray(3), new double[][]{{1, 2, 3}, {4, 5}, {6}});
+        assertEquals(Mission10.getArray(2), new double[][]{{1, 2}, {3}});
+        assertEquals(Mission10.getArray(4), new double[][]{{1, 2, 3, 4}, {5, 6, 7}, {8, 9}, {10}});
+    }
+
+    @Test
     public void testCheckNullAndSort() {
         Object[] array = new Object[]{10., 30., 20., 40., 60., 50., 70.};
         Object[] arrayIsSorted = new Object[]{10., 20., 30., 40., 50., 60., 70.};

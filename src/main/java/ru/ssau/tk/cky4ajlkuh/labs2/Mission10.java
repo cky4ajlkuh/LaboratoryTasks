@@ -7,9 +7,9 @@ import static java.util.Objects.isNull;
 
 public class Mission10 {
 
-    public static void checkNullAndSort(Object[] array){
-        for(int i=0; i != array.length; i++){
-            if(isNull(array[i])){
+    public static void checkNullAndSort(Object[] array) {
+        for (int i = 0; i != array.length; i++) {
+            if (isNull(array[i])) {
                 throw new NullPointerException();
             }
         }
@@ -199,6 +199,18 @@ public class Mission10 {
         }
     }
 
+    static double[][] getArray(int index) {
+        double[][] array = new double[index][];
+        int k = 1;
+        for (int i = 0; i < index; i++) {
+            array[i] = new double[index - i];
+            for (int j = 0; j < index - i; j++) {
+                array[i][j] = k;
+                k++;
+            }
+        }
+        return array;
+    }
 }
 
 class outArray {
