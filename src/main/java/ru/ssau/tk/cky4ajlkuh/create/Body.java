@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class Body extends JFrame {
     JButton jButton1 = new JButton("Очистить");
@@ -25,7 +23,6 @@ public class Body extends JFrame {
     private double k;
     String string;
     Listener listener = new Listener();
-    ListenerMouse listenerMouse = new ListenerMouse();
 
     public Body(String s) {
         super(s);
@@ -39,11 +36,7 @@ public class Body extends JFrame {
         jButtonPlus.addActionListener(listener);
         jButtonDivider.addActionListener(listener);
         jButton1.addActionListener(listener);
-        textField0.addMouseListener(listenerMouse);
-        textField.addMouseListener(listenerMouse);
-        textField1.addMouseListener(listenerMouse);
         setSize(400, 400);
-
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setAutoCreateGaps(true);
@@ -89,65 +82,6 @@ public class Body extends JFrame {
 
     }
 
-    public class ListenerMouse implements MouseListener {
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            if (e.getSource() == textField0) {
-                textField0.setEditable(false);
-            }
-            if (e.getSource() == textField1) {
-                textField0.setEditable(true);
-            }
-            if (e.getSource() == textField) {
-                textField0.setEditable(true);
-            }
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseReleased(MouseEvent e) {
-
-        }
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-        }
-    }
-
-    private void checkNull() {
-        if (i != 0 && k == 0) {
-            JOptionPane.showMessageDialog(null, "На ноль делить нельзя!");
-            throw new ArithmeticException();
-        }
-    }
-
-    private void checkText() {
-        String str = textField.getText();
-        String str1 = textField1.getText();
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = -9; j < 10; j++) {
-                if (str.charAt(i) == j) {
-                    throw new ArithmeticException();
-                }
-            }
-        }
-        for (int i = 0; i < str1.length(); i++) {
-            for (int j = -9; j < 10; j++) {
-                if (str1.charAt(i) == j) {
-                    throw new ArithmeticException();
-                }
-            }
-        }
-    }
 
     public class Listener implements ActionListener {
         @Override
@@ -156,7 +90,6 @@ public class Body extends JFrame {
                 if (e.getSource() == jButtonMultiply) {
                     i = Double.parseDouble(textField.getText());
                     k = Double.parseDouble(textField1.getText());
-                    checkText();
                     double j = i * k;
                     string = "" + j;
                     textField0.setBackground(Color.GRAY);
@@ -165,8 +98,6 @@ public class Body extends JFrame {
                 if (e.getSource() == jButtonDivider) {
                     i = Double.parseDouble(textField.getText());
                     k = Double.parseDouble(textField1.getText());
-                    checkText();
-                    checkNull();
                     double j = i / k;
                     string = "" + j;
                     textField0.setBackground(Color.BLUE);
@@ -175,7 +106,6 @@ public class Body extends JFrame {
                 if (e.getSource() == jButtonMinus) {
                     i = Double.parseDouble(textField.getText());
                     k = Double.parseDouble(textField1.getText());
-                    checkText();
                     double j = i - k;
                     string = "" + j;
                     textField0.setBackground(Color.YELLOW);
@@ -184,7 +114,6 @@ public class Body extends JFrame {
                 if (e.getSource() == jButtonPlus) {
                     i = Double.parseDouble(textField.getText());
                     k = Double.parseDouble(textField1.getText());
-                    checkText();
                     double j = i + k;
                     string = "" + j;
                     textField0.setBackground(Color.CYAN);
@@ -196,9 +125,8 @@ public class Body extends JFrame {
                     textField0.setText(null);
                     textField0.setBackground(Color.WHITE);
                 }
-
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Вводите нормально числа!");
+                JOptionPane.showMessageDialog(null, "Введите число!");
             }
         }
     }
