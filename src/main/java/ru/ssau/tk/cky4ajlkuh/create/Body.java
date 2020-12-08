@@ -2,10 +2,7 @@ package ru.ssau.tk.cky4ajlkuh.create;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class Body extends JFrame {
     JButton jButton1 = new JButton("Очистить");
@@ -26,6 +23,8 @@ public class Body extends JFrame {
     String string;
     Listener listener = new Listener();
     ListenerMouse listenerMouse = new ListenerMouse();
+    JComboBox<String> comboBox = new JComboBox<>(new String[]{" ", "Процент", "Корень"});
+    ListenerComboBox listenerComboBox = new ListenerComboBox();
 
     public Body(String s) {
         super(s);
@@ -43,7 +42,7 @@ public class Body extends JFrame {
         textField.addMouseListener(listenerMouse);
         textField1.addMouseListener(listenerMouse);
         setSize(400, 400);
-
+        comboBox.addItemListener(listenerComboBox);
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setAutoCreateGaps(true);
@@ -54,7 +53,8 @@ public class Body extends JFrame {
                         .addComponent(jButtonPlus)
                         .addComponent(jButtonDivider)
                         .addComponent(jButtonMinus)
-                        .addComponent(jButtonMultiply))
+                        .addComponent(jButtonMultiply)
+                        .addComponent(comboBox))
 
                 .addGroup(layout.createSequentialGroup()
                         .addComponent(label)
@@ -74,7 +74,8 @@ public class Body extends JFrame {
                         .addComponent(jButtonPlus)
                         .addComponent(jButtonDivider)
                         .addComponent(jButtonMinus)
-                        .addComponent(jButtonMultiply))
+                        .addComponent(jButtonMultiply)
+                        .addComponent(comboBox))
                 .addGroup(layout.createParallelGroup()
                         .addComponent(label)
                         .addComponent(textField))
@@ -87,6 +88,38 @@ public class Body extends JFrame {
                 .addComponent(jButton1)
         );
 
+    }
+
+    public class ListenerComboBox implements ItemListener {
+
+        @Override
+        public void itemStateChanged(ItemEvent e) {
+            try {
+                if (e.getItem() == "Процент") {
+                    checkText();
+                    i = Double.parseDouble(textField.getText());
+                    string = i / 100 + "%";
+                    textField0.setBackground(Color.GRAY);
+                    textField0.setText(string);
+                    textField1.setEditable(false);
+                }
+                if (e.getItem() == "Корень") {
+                    checkText();
+                    i = Double.parseDouble(textField.getText());
+                    string = Math.sqrt(i) + "";
+                    textField0.setBackground(Color.WHITE);
+                    textField0.setText(string);
+                    textField1.setEditable(false);
+                }
+
+                if (e.getItem() != "Процент" & e.getItem() != "Корень") {
+                    textField1.setEditable(true);
+                }
+            } catch (Exception exception) {
+                JOptionPane.showMessageDialog(null, "Вводите нормально числа!");
+            }
+
+        }
     }
 
     public class ListenerMouse implements MouseListener {
@@ -102,11 +135,11 @@ public class Body extends JFrame {
             if (e.getSource() == textField) {
                 textField0.setEditable(true);
             }
+
         }
 
         @Override
         public void mousePressed(MouseEvent e) {
-
         }
 
         @Override
@@ -116,6 +149,7 @@ public class Body extends JFrame {
 
         @Override
         public void mouseEntered(MouseEvent e) {
+
         }
 
         @Override
