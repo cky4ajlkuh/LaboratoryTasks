@@ -15,9 +15,9 @@ public class Body extends JFrame {
     JLabel label2 = new JLabel("");
     JLabel label3 = new JLabel("");
     JLabel label0 = new JLabel("Ваше число: ");
-    JTextField textField = new JTextField(5);
-    JTextField textField1 = new JTextField(5);
-    JTextField textField0 = new JTextField(5);
+    JTextField textField = new JTextField(30);
+    JTextField textField1 = new JTextField(30);
+    JTextField textField0 = new JTextField(30);
     private double i;
     private double k;
     String string;
@@ -87,7 +87,6 @@ public class Body extends JFrame {
                         .addComponent(textField0))
                 .addComponent(jButton1)
         );
-
     }
 
     public class ListenerComboBox implements ItemListener {
@@ -102,6 +101,7 @@ public class Body extends JFrame {
                     textField0.setBackground(Color.GRAY);
                     textField0.setText(string);
                     textField1.setEditable(false);
+                    textField1.setText(null);
                 }
                 if (e.getItem() == "Корень") {
                     checkText();
@@ -110,6 +110,7 @@ public class Body extends JFrame {
                     textField0.setBackground(Color.WHITE);
                     textField0.setText(string);
                     textField1.setEditable(false);
+                    textField1.setText(null);
                 }
 
                 if (e.getItem() != "Процент" & e.getItem() != "Корень") {
