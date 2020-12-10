@@ -7,6 +7,16 @@ import static java.util.Objects.isNull;
 
 public class Mission10 {
 
+    public static int[] arrayHalf(int size) {
+        int[] array = new int[size];
+
+        for (int i = 0; i < Math.ceil((double) size / 2); i++) {
+            array[i] = i + 1;
+            array[size - i - 1] = i + 1;
+        }
+        return array;
+    }
+
     public static void checkNullAndSort(Object[] array) {
         for (int i = 0; i != array.length; i++) {
             if (isNull(array[i])) {

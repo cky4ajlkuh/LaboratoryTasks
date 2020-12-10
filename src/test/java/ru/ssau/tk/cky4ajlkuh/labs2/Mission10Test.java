@@ -12,6 +12,13 @@ import static org.testng.Assert.assertTrue;
 public class Mission10Test {
 
     @Test
+    public void testArrayHalf() {
+        assertEquals(Mission10.arrayHalf(5), new int[]{1, 2, 3, 2, 1});
+        assertEquals(Mission10.arrayHalf(6), new int[]{1, 2, 3, 3, 2, 1});
+        assertEquals(Mission10.arrayHalf(7), new int[]{1, 2, 3, 4, 3, 2, 1});
+    }
+
+    @Test
     public void testGetArray() {
         assertEquals(Mission10.getArray(3), new double[][]{{1, 2, 3}, {4, 5}, {6}});
         assertEquals(Mission10.getArray(2), new double[][]{{1, 2}, {3}});
