@@ -3,9 +3,7 @@ package ru.ssau.tk.cky4ajlkuh.create.POJO;
 import java.util.List;
 
 public class Route {
-
     List<Location> locations;
-
     public Route(List<Location> locations) {
         this.locations = locations;
     }
@@ -22,5 +20,4 @@ public class Route {
     public void removeLocation(int index){
         locations.remove(index);
     }
-
 }
