@@ -26,15 +26,9 @@ public class PracticeTest {
         Person person2 = new Person(null, "Ford");
         Person person3 = new Person("56", null);
         assertEquals(Practice.getNamePerson(person), "Мягкий Кинотеатр");
-        Assert.assertThrows(NullPointerException.class, () -> {
-            Practice.getNamePerson(person1);
-        });
-        Assert.assertThrows(NullPointerException.class, () -> {
-            Practice.getNamePerson(person2);
-        });
-        Assert.assertThrows(NullPointerException.class, () -> {
-            Practice.getNamePerson(person3);
-        });
+        Assert.assertThrows(NullPointerException.class, () -> Practice.getNamePerson(person1));
+        Assert.assertThrows(NullPointerException.class, () -> Practice.getNamePerson(person2));
+        Assert.assertThrows(NullPointerException.class, () -> Practice.getNamePerson(person3));
 
     }
 

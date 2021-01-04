@@ -1,5 +1,6 @@
 package ru.ssau.tk.cky4ajlkuh.labs2;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -12,7 +13,7 @@ public class MatricesTest {
     private final static Matrix matrix2 = new Matrix(3, 3);
 
     @Test
-    public void testMultiply() {
+    public void testMultiply() throws IncompatibleDimensionsException {
         for (int i = 0; i < matrix.getN(); i++) {
             for (int j = 0; j < matrix.getM(); j++) {
                 matrix.setAt(i, j, j);
@@ -26,12 +27,11 @@ public class MatricesTest {
         assertEquals(Matrices.multiply(matrix, matrix2).getAt(1, 1), matrix.getAt(1, 1) * matrix2.getAt(1, 1), 0.01);
         assertEquals(Matrices.multiply(matrix, matrix2).getAt(1, 0), matrix.getAt(1, 0) * matrix2.getAt(1, 0), 0.01);
         assertEquals(Matrices.multiply(matrix, matrix2).getAt(2, 2), matrix.getAt(2, 2) * matrix2.getAt(2, 2), 0.01);
-        assertNull(Matrices.multiply(matrix1, matrix2), null);
-
+        Assert.assertThrows(IncompatibleDimensionsException.class, () -> Matrices.multiply(matrix1, matrix2));
     }
 
     @Test
-    public void testPlus() {
+    public void testPlus() throws IncompatibleDimensionsException {
         for (int i = 0; i < matrix.getN(); i++) {
             for (int j = 0; j < matrix.getM(); j++) {
                 matrix.setAt(i, j, j);
@@ -45,7 +45,8 @@ public class MatricesTest {
         assertEquals(Matrices.plus(matrix, matrix2).getAt(0, 0), matrix.getAt(0, 0) + matrix2.getAt(0, 0), 0.01);
         assertEquals(Matrices.plus(matrix, matrix2).getAt(0, 1), matrix.getAt(0, 1) + matrix2.getAt(0, 1), 0.01);
         assertEquals(Matrices.plus(matrix, matrix2).getAt(2, 0), matrix.getAt(2, 0) + matrix2.getAt(2, 0), 0.01);
-        assertNull(Matrices.plus(matrix1, matrix2), null);
+        Assert.assertThrows(IncompatibleDimensionsException.class, () -> Matrices.multiply(matrix1, matrix2));
+
     }
 
     @Test
