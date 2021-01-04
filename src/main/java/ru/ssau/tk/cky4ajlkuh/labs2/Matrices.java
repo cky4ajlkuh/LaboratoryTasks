@@ -2,7 +2,7 @@ package ru.ssau.tk.cky4ajlkuh.labs2;
 
 public class Matrices {
 
-    static Matrix multiply(Matrix first, Matrix second) throws IncompatibleDimensionsException {
+    static Matrix multiply(Matrix first, Matrix second) {
         Matrix matrixMultiply = new Matrix(first.getN(), second.getN());
         if (first.getN() != second.getN()) {
             throw new IncompatibleDimensionsException("Кол-во строк различно!");
@@ -20,7 +20,7 @@ public class Matrices {
         return matrixMultiply;
     }
 
-    static Matrix plus(Matrix matrix1, Matrix matrix2) throws IncompatibleDimensionsException {
+    static Matrix plus(Matrix matrix1, Matrix matrix2) {
         Matrix matrixPlus = new Matrix(matrix1.getN(), matrix2.getN());
         if (matrix1.getN() != matrix2.getN()) {
             throw new IncompatibleDimensionsException("Кол-во строк различно!");

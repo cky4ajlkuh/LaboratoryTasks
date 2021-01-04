@@ -13,7 +13,7 @@ public class MatricesTest {
     private final static Matrix matrix2 = new Matrix(3, 3);
 
     @Test
-    public void testMultiply() throws IncompatibleDimensionsException {
+    public void testMultiply() {
         for (int i = 0; i < matrix.getN(); i++) {
             for (int j = 0; j < matrix.getM(); j++) {
                 matrix.setAt(i, j, j);
@@ -31,7 +31,7 @@ public class MatricesTest {
     }
 
     @Test
-    public void testPlus() throws IncompatibleDimensionsException {
+    public void testPlus() {
         for (int i = 0; i < matrix.getN(); i++) {
             for (int j = 0; j < matrix.getM(); j++) {
                 matrix.setAt(i, j, j);

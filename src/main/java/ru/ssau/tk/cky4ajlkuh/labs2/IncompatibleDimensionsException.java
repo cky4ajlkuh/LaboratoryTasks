@@ -1,6 +1,6 @@
 package ru.ssau.tk.cky4ajlkuh.labs2;
 
-public class IncompatibleDimensionsException extends Exception {
+public class IncompatibleDimensionsException extends RuntimeException {
     public IncompatibleDimensionsException() {
 
     }
